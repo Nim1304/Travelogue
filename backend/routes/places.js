@@ -7,7 +7,7 @@ const storage=multer.diskStorage({
         cb(null,'./uploads/');
     },
     filename: function(req,file,cb) {
-        cb(null,'travelogue_'+file.originalname);
+        cb(null,'travelogue_'+Date.now());
     }
 });
 
