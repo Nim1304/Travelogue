@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route} from "react-router-dom";
 // import logo from './logo.svg';
-// import './App.css';
+import './App.css';
 
 import ListPlaces from "./components/listPlace.component";
 import AddPlace from "./components/addPlace.component";
