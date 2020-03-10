@@ -4,9 +4,12 @@ import axios from 'axios';
 
 const List = (props) => {
     return (
-        <li class="media">
-            <img src={props.places.imageData} className="mr-3" style={{width:"300px"},{height:"300px"}}></img>
-        </li>
+        <div className="gallery">
+            <a target="_blank" href="img_5terre.jpg">
+            <img src={props.places.imageData} alt="Cinque Terre" width="400" height="400"></img>
+            </a>
+            <div className="desc">{props.places.description}</div>
+        </div>
     )
 }
 
@@ -35,7 +38,7 @@ export default class ListPlaces extends Component {
             <div>
                 <h3>
                     Logue &nbsp;
-                <small class="text-muted">See your visited places</small>
+                <small className="text-muted">See your visited places</small>
                 </h3>
                 {/* <table className="table">
                     <thead className="thead-dark">
@@ -50,11 +53,9 @@ export default class ListPlaces extends Component {
                         }
                     </tbody>
                 </table> */}
-                <ul className="list-unstyled">
-                    {
-                        this.placesList()
-                    }
-                </ul>
+                {
+                    this.placesList()
+                }
             </div>
         )
     }
