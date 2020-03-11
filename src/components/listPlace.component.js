@@ -3,13 +3,27 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const List = (props) => {
+    var a=props.places.imageData;
     return (
-        <div className="gallery">
-            <a target="_blank" href="img_5terre.jpg">
-            <img src={props.places.imageData} alt="Cinque Terre" width="400" height="400"></img>
-            </a>
-            <div className="desc">{props.places.description}</div>
+        <div className="responsive">
+            <div className="gallery">
+                <a target="_blank" href="img_5terre.jpg">
+                <img src={props.places.imageData} alt="Cinque Terre" width="400" height="400"></img>
+                </a>
+                <div className="desc">{props.places.description}</div>
+            </div>
         </div>
+        
+        // <div class="col-md-4">
+        //     <div class="thumbnail">
+        //         <a href="/w3images/lights.jpg">
+        //             <img src={props.places.imageData} alt="Lights" style="width:100%"></img>
+        //             <div class="caption">
+        //                 <p>{props.places.description}</p>
+        //             </div>
+        //         </a>
+        //     </div>
+        // </div>
     )
 }
 
