@@ -27,6 +27,10 @@ const List = (props) => {
     )
 }
 
+const Add = ()=>{
+    return <h4>Add Something</h4>
+}
+
 export default class ListPlaces extends Component {
     constructor(props) {
         super(props);
@@ -48,6 +52,9 @@ export default class ListPlaces extends Component {
     }
 
     render() {
+        let places;
+        this.state.places.length>0 ? places=this.placesList() : places=<Add/>;
+        // console.log(places)
         return (
             <div>
                 <h3>
@@ -67,8 +74,9 @@ export default class ListPlaces extends Component {
                         }
                     </tbody>
                 </table> */}
+                
                 {
-                    this.placesList()
+                    places
                 }
             </div>
         )
