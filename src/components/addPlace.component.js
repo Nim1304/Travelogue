@@ -32,8 +32,8 @@ export default class AddPlace extends Component {
     onAddPlace(e){
         this.setState({
             place:e.target.value,
-            latitude:geopositionData.coords.latitude,
-            longitude:geopositionData.coords.longitude
+            latitude:parseFloat(geopositionData.coords.latitude).toFixed(5),
+            longitude:parseFloat(geopositionData.coords.longitude).toFixed(5)
         })
     }
 
@@ -55,7 +55,7 @@ export default class AddPlace extends Component {
         place.append("place",this.state.place);
         place.append("description",this.state.description);
         place.append("imageData",this.state.image);
-        place.append("location",`https://www.google.com/maps@${this.state.latitude},${this.state.longitude}`);
+        place.append("location",`https://www.google.com/maps/@${this.state.latitude},${this.state.longitude}`);
 
         console.log(place);
 
