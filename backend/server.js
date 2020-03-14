@@ -20,7 +20,7 @@ mongoose.connect(url,{useNewUrlParser:true,useCreateIndex:true});
 
 db.once('open',()=>{
     console.log('MongoDB connected');
-});
+}); 
 
 
 app.listen(PORT,()=>{

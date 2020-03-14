@@ -44,7 +44,8 @@ router.route('/add').post(upload.single('imageData'),(req,res,next)=>{
     var newPlace=new Places({
         place:place,
         description:desc, 
-        imageData:'http://localhost:3000/'+req.file.path
+        imageData:'http://localhost:3000/'+req.file.path,
+        location:req.body.location
     });
     
     newPlace.save((err)=>{

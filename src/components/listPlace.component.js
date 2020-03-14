@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -7,14 +8,14 @@ const List = (props) => {
     return (
         <div className="responsive">
             <div className="gallery">
-                <a target="_blank" href="img_5terre.jpg">
+                <a href={props.places.location}>
                 <img src={props.places.imageData} alt="Cinque Terre" width="400" height="400"></img>
                 </a>
                 <div className="desc">{props.places.description}</div>
             </div>
         </div>
         
-        // <div class="col-md-4">
+        // <div class="col-md-4">`
         //     <div class="thumbnail">
         //         <a href="/w3images/lights.jpg">
         //             <img src={props.places.imageData} alt="Lights" style="width:100%"></img>

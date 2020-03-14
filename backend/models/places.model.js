@@ -12,6 +12,9 @@ const placesSchema = new Schema ({
     },
     imageData : {
         type:String
+    },
+    location: {
+        type:String
     }
 },{
     timestamps:true

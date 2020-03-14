@@ -1,6 +1,17 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useCurrentPosition } from 'react-use-geolocation';
 import axios from 'axios';
+
+
+var geopositionData;
+const Position = ()=>{
+    const [position,error]=useCurrentPosition();
+    if(position){
+        geopositionData=position;
+    }
+    return null;
+}
 
 export default class AddPlace extends Component {
     constructor(props) {
@@ -12,12 +23,17 @@ export default class AddPlace extends Component {
 
         this.state={place:'',
                     description:'',
-                    image:''}
+                    image:'',
+                    latitude:'',
+                    longitude:''}
+        
     }
 
     onAddPlace(e){
         this.setState({
-            place:e.target.value
+            place:e.target.value,
+            latitude:geopositionData.coords.latitude,
+            longitude:geopositionData.coords.longitude
         })
     }
 
@@ -34,11 +50,12 @@ export default class AddPlace extends Component {
     }
     onSubmit(e){
         e.preventDefault();
-
+        
         const place=new FormData();
         place.append("place",this.state.place);
         place.append("description",this.state.description);
         place.append("imageData",this.state.image);
+        place.append("location",`https://www.google.com/maps@${this.state.latitude},${this.state.longitude}`);
 
         console.log(place);
 
@@ -54,6 +71,7 @@ export default class AddPlace extends Component {
         return ( 
             <div>
                 <h1>Add a Place</h1>
+                <Position />
                 <form onSubmit={this.onSubmit}>
                     <input type="text"
                             value={this.state.place}
