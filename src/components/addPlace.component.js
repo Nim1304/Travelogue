@@ -10,8 +10,8 @@ const Position = ()=>{
     if(position){
         geopositionData=position;
     }
-    return null;s
-    // return <p>nulll</p>s
+    return null;
+    // return <p></p>
 }
 
 export default class AddPlace extends Component {

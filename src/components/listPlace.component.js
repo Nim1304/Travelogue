@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const List = (props) => {
-    var a=props.places.imageData;
+    var a=`/places/${props.places._id}`
     return (
         <div className="responsive">
             <div className="gallery">
-                <a href={props.places.location}>
+                <a href={a}>
                 <img src={props.places.imageData} alt="Cinque Terre" width="400" height="400"></img>
                 </a>
                 <div className="desc">{props.places.description}</div>

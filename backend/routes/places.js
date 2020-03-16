@@ -35,6 +35,28 @@ router.get('/',(req,res)=>{
     });
 });
 
+router.get('/:id',(req,res)=>{
+    Places.findOne({_id:req.params.id},(err,result)=>{
+        if(err){
+            // console.log(`Error:${err}`);
+            res.status(400).json(err);
+        } else {
+            res.json(result);
+        }
+    });
+})
+
+router.post('/delete/:id',(req,res)=>{
+    Places.deleteOne({_id:req.params.id},(err)=>{
+        if(err){
+            console.log(`Error:${err}`);
+        } else {
+            res.json("success");
+        }
+    })
+});
+
+
 router.route('/add').post(upload.single('imageData'),(req,res,next)=>{
     const place=req.body.place;
     const desc=req.body.description;
