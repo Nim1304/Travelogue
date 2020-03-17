@@ -11,7 +11,7 @@ import ShowPlace from "./components/showPlace.component";
 function App() {
   return (
     <Router>
-      <div id="container">
+      <div>
         <Navbar />
         <br />
         <Route path="/" exact component={ListPlaces} />

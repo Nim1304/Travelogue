@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Route } from 'react-router-dom';
-import App from '../App';
+import "materialize-css";
 
 const Place = (props) =>{
     return (
         <div>
-            <img src={props.place.imageData}></img>
-            <p>name : {props.place.name}</p>
+            <img className="class responsive-img" src={props.place.imageData}></img>
+            <p>name : {props.place.place}</p>
             <p>desc : {props.place.description}</p>
             <a href={props.place.location}>See on Maps</a>
             <input type="submit" />
@@ -45,21 +44,20 @@ export default class ShowPlace extends Component {
         e.preventDefault();
         axios.post(`http://localhost:3000/places/delete/${this.state.mongo_id}`).then((res)=>{
             console.log(res);
-            if(res=="success")
-            alert('deleted');
+            if(res.data==="success")
+            alert('Successfully Deleted');
             this.setState({done:true});
+            window.location.href="/"
         });
 
     }
 
     render(){
-        let route;
-        this.state.done ? route =<App /> : route=this.showPlace();
-
         return (
             <form onSubmit={this.onSubmit}>
-                {route}
-            
+                {
+                    this.showPlace()
+                }            
             </form>
         )
     }
