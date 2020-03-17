@@ -13,6 +13,9 @@ const placesSchema = new Schema ({
     imageData : {
         type:String
     },
+    imageName : {
+        type:String
+    },
     location: {
         type:String
     }
