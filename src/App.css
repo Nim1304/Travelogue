@@ -42,6 +42,10 @@
   border-radius: 10px;
 }
 
+body {
+  background-color: rgb(41, 41, 41);
+  color: white;
+}
 /* div.gallery {
   border: 1px solid #ccc;
 }

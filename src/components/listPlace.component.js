@@ -17,7 +17,7 @@ const List = (props) => {
     return (
         <div class="col s12 m6 l3">
             <div className="card card-panel hoverable">
-                <div className="card-image waves-effect waves-block waves-light">
+                <div className="card-image waves-effect waves-block waves-dark">
                     <img className="activator responsive-img" src={props.places.imageData}></img>
                 </div>
                 <div className="card-content">

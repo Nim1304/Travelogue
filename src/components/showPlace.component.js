@@ -6,7 +6,7 @@ const Place = (props) => {
     return (
         <div>
             <img className="responsive-img" align="centre" src={props.place.imageData}></img>
-            <div><span>Name<blockquote>{props.place.place}</blockquote></span></div>
+            <div><span>Name<blockquote>{props.place.place}</blockquote></span></div> 
             <p>desc : {props.place.description}</p>
             <p><a href={props.place.location}>See on Maps</a></p>
         </div>
