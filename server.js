@@ -16,7 +16,7 @@ app.use(cors());
 app.use('/places',places);
 app.use('/uploads',express.static('uploads'));
 
-const url='mongodb://127.0.0.1:27017/travel';
+const url='mongodb+srv://sudonim:sudonim_1304@cluster0-yhwnu.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect(url,{useNewUrlParser:true,useCreateIndex:true});
 
 if(process.env.NODE_ENV=="production"){
