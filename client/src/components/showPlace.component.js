@@ -44,7 +44,7 @@ export default class ShowPlace extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:3000/places/${this.state.mongo_id}`).then((res) => {
+        axios.get(`places/${this.state.mongo_id}`).then((res) => {
             this.setState({ place: res.data });
             console.log(res.data)
         }).catch((err) => {
@@ -58,7 +58,7 @@ export default class ShowPlace extends Component {
 
     onClick(e) {
         e.preventDefault();
-        axios.post(`http://localhost:3000/places/delete/${this.state.mongo_id}`).then((res) => {
+        axios.post(`places/delete/${this.state.mongo_id}`).then((res) => {
             console.log(res);
             if (res.data === "success")
                 alert('Successfully Deleted');

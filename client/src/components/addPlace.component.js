@@ -63,7 +63,7 @@ export default class AddPlace extends Component {
 
         console.log(place);
 
-        axios.post('http://localhost:3000/places/add', place)
+        axios.post('/places/add', place)
             .then((res) => {
                 if (res.data === "success") {
                     alert('Successfully Saved');

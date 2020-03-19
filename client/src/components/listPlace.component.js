@@ -15,7 +15,7 @@ const ListWithRow = (props) => {
 }
 
 const List = (props) => {
-    var a = `/places/${props.places._id}`
+    var a = `/place/${props.places._id}`
     return (
             <div className="col s12 m6 l3">
                 <div className="card card-panel hoverable">
@@ -51,7 +51,7 @@ export default class ListPlaces extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3000/places').then((res) => {
+        axios.get('places').then((res) => {
             this.setState({ places: res.data });
         }).catch((err) => {
             console.log(err);
