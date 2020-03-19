@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import "materialize-css";
 
+
+
 const ListWithRow = (props) => {
-    
+
     return (
         <div className="row">
             {props.list}
@@ -15,22 +17,26 @@ const ListWithRow = (props) => {
 const List = (props) => {
     var a = `/places/${props.places._id}`
     return (
-        <div class="col s12 m6 l3">
-            <div className="card card-panel hoverable">
-                <div className="card-image waves-effect waves-block waves-dark">
-                    <img className="activator responsive-img" src={props.places.imageData}></img>
-                </div>
-                <div className="card-content">
-                    <span className="card-title activator grey-text text-darken-4">{props.places.place}<i className="material-icons right">more_vert</i></span>
-                </div>
-                <div className="card-reveal">
-                    <span className="card-title grey-text text-darken-4">{props.places.place}<i className="material-icons right">close</i></span>
-                    <p>{props.places.description}</p>
-                    <p><a href={props.places.location}>See On Maps</a></p>
-                    <p><a href={a}>See Big</a> </p> 
+            <div className="col s12 m6 l3">
+                <div className="card card-panel hoverable">
+                    <div className="card-image waves-effect waves-block waves-dark">
+                        <img className="activator responsive-img" src={props.places.imageData}></img>
+                    </div>
+                    <div className="card-content">
+                        <span className="card-title activator grey-text text-darken-4">{props.places.place}<i className="material-icons right">more_vert</i></span>
+                    </div>
+                    <div className="card-reveal">
+                        <span className="card-title grey-text text-darken-4">{props.places.place}<i className="material-icons right">close</i></span>
+                        <p>{props.places.description}</p>
+                        <p><a href={props.places.location}>See On Maps</a></p>
+                        <p><a href={a}>See Big</a> </p>
+                    </div>
                 </div>
             </div>
-        </div>
+
+            // <a className="carousel-item" href={a}>
+            //     <img src={props.places.imageData} height="200px" width="200px"></img>
+            // </a>
     )
 }
 
@@ -53,9 +59,9 @@ export default class ListPlaces extends Component {
     }
 
     placesList() {
-        var ls=[]
+        var ls = []
         this.state.places.map((current, i) => {
-            if (i % 4 == 0){
+            if (i % 4 === 0) {
                 ls.push([])
                 ls[ls.length - 1].push(<List places={current} />)
             } else {
@@ -63,10 +69,12 @@ export default class ListPlaces extends Component {
             }
         });
         console.log(ls);
-        return ls.map((curr)=>{
+        return ls.map((curr) => {
             return <ListWithRow list={curr} />
         });
-
+        // return this.state.places.map((current)=>{
+        //     return <List places={current} />
+        // })
     }
 
     render() {
@@ -85,6 +93,7 @@ export default class ListPlaces extends Component {
                     }
                 </div>
             </div>
+            
         )
     }
 }

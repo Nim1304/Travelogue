@@ -4,12 +4,30 @@ import "materialize-css";
 
 const Place = (props) => {
     return (
-        <div>
-            <img className="responsive-img" align="centre" src={props.place.imageData}></img>
-            <div><span>Name<blockquote>{props.place.place}</blockquote></span></div> 
-            <p>desc : {props.place.description}</p>
-            <p><a href={props.place.location}>See on Maps</a></p>
+        <div class="card">
+            <div class="card-content">
+                <img className="materialboxed" data-caption={props.place.place} src={props.place.imageData}></img>
+            </div>
+            <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width">
+                    <li class="tab"><a href="#place">Place</a></li>
+                    <li class="tab"><a class="active" href="#desc">Description</a></li>
+                    <li class="tab"><a href="#location">Location</a></li>
+                </ul>
+            </div>
+            <div class="card-content grey lighten-4">
+                <div id="place">{props.place.place}</div>
+                <div id="desc"> {props.place.description} </div>
+                <div id="location"><iframe
+                    width="600"
+                    height="450"
+                    frameborder="0"
+                    src={props.place.iframeLocation} allowfullscreen>
+                </iframe></div>
+            </div>
         </div>
+
+
     )
 }
 

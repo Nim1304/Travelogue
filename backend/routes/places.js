@@ -50,24 +50,20 @@ router.get('/:id',(req,res)=>{
 })
 
 router.post('/delete/:id',(req,res)=>{
-    var path;
     Places.findOne({_id:req.params.id},(err,result)=>{
-        path=result.imageName;
-    });
-    console.log(path);
-    // var path=location.imageName;
-    Places.deleteOne({_id:req.params.id},(err)=>{
-        if(err){
-            console.log(`Error:${err}`);
-        } else {
-            fs.unlink(`./uploads/${path}`,(err)=>{
-                if(err){
-                    console.log(err);
-                } else {
-                    res.json("success");
-                }
-            });
-        } 
+        Places.deleteOne({_id:req.params.id},(err)=>{
+            if(err){
+                console.log(`Error:${err}`);
+            } else {
+                fs.unlink(`./uploads/${result.imageName}`,(err)=>{
+                    if(err){
+                        console.log(err);
+                    } else {
+                        res.json("success");
+                    }
+                });
+            } 
+        });
     });
 });
 
@@ -83,14 +79,15 @@ router.route('/add').post(upload.single('imageData'),(req,res,next)=>{
         description:desc, 
         imageData:'http://localhost:3000/'+req.file.path,
         imageName:req.file.path.slice(8,req.file.path.length),
-        location:req.body.location
+        location:req.body.location,
+        iframeLocation:req.body.iframeLocation
     });
     
     newPlace.save((err)=>{
         if(err){
             console.log(err);
         } else {
-            res.status(200).json("Successful");
+            res.status(200).json("success");
         }
     })
 });

@@ -18,6 +18,9 @@ const placesSchema = new Schema ({
     },
     location: {
         type:String
+    },
+    iframeLocation : {
+        type:String
     }
 },{
     timestamps:true

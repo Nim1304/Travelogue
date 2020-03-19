@@ -42,9 +42,8 @@
   border-radius: 10px;
 }
 
-body {
-  background-color: rgb(41, 41, 41);
-  color: white;
+*::-webkit-scrollbar {
+  display: none;
 }
 /* div.gallery {
   border: 1px solid #ccc;
