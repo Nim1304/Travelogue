@@ -26,8 +26,6 @@ const Place = (props) => {
                 </iframe></div>
             </div>
         </div>
-
-
     )
 }
 
@@ -62,7 +60,6 @@ export default class ShowPlace extends Component {
             console.log(res);
             if (res.data === "success")
                 alert('Successfully Deleted');
-            this.setState({ done: true });
             window.location.href = "/"
         });
 

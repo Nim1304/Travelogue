@@ -15,7 +15,7 @@ const ListWithRow = (props) => {
 }
 
 const List = (props) => {
-    var a = `/place/${props.places._id}`
+    var a = `/place/show/${props.places._id}`
     return (
             <div className="col s12 m6 l3">
                 <div className="card card-panel hoverable">
