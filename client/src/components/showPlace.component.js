@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import "materialize-css";
+// import "materialize-css";
 
 const Place = (props) => {
     return (
