@@ -16,7 +16,8 @@ app.use(cors());
 app.use('/places',places);
 app.use('/uploads',express.static('uploads'));
 
-const url='mongodb+srv://sudonim:sudonim_1304@cluster0-yhwnu.mongodb.net/test?retryWrites=true&w=majority/travel';
+const url='mongodb+srv://sudonim:sudonim_1304@cluster0-yhwnu.mongodb.net/travel?retryWrites=true&w=majority';
+// const url='mongodb://127.0.0.1:27017/travel'
 mongoose.connect(url,{useNewUrlParser:true,useCreateIndex:true});
 
 if(process.env.NODE_ENV=="production"){
@@ -25,6 +26,11 @@ if(process.env.NODE_ENV=="production"){
         res.sendFile(path.resolve(__dirname,'client','build','index.html'));
     })
 }
+app.use(express.static('client/build'));
+    app.get('*',(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'client','build','index.html'));
+    });
+
 
 db.once('open',()=>{
     console.log('MongoDB connected');
