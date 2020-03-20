@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-// import "materialize-css";
+import "materialize-css";
 
 
 
@@ -15,7 +15,7 @@ const ListWithRow = (props) => {
 }
 
 const List = (props) => {
-    var a = `/place/show/${props.places._id}`
+    var a = `/place/${props.places._id}`
     return (
             <div className="col s12 m6 l3">
                 <div className="card card-panel hoverable">

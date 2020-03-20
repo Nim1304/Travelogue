@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import "materialize-css";
+import "materialize-css";
 
 const Place = (props) => {
     return (
-        <div class="card">
+        <div class="card"> 
             <div class="card-content">
                 <img className="materialboxed" data-caption={props.place.place} src={props.place.imageData}></img>
             </div>
@@ -42,7 +42,7 @@ export default class ShowPlace extends Component {
     }
 
     componentDidMount() {
-        axios.get(`places/${this.state.mongo_id}`).then((res) => {
+        axios.get(`/places/${this.state.mongo_id}`).then((res) => {
             this.setState({ place: res.data });
             console.log(res.data)
         }).catch((err) => {
@@ -56,7 +56,7 @@ export default class ShowPlace extends Component {
 
     onClick(e) {
         e.preventDefault();
-        axios.post(`places/delete/${this.state.mongo_id}`).then((res) => {
+        axios.post(`/places/delete/${this.state.mongo_id}`).then((res) => {
             console.log(res);
             if (res.data === "success")
                 alert('Successfully Deleted');

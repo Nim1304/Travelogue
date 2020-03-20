@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-// import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import { useCurrentPosition } from 'react-use-geolocation';
 import axios from 'axios';
-
+// import "materialize-css";
 
 var geopositionData;
 const Position = () => {

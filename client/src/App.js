@@ -16,8 +16,8 @@ function App() {
         <Navbar />
         <br />
         <Route path="/" exact component={ListPlaces} />
-        <Route path="/place/addplace" component={AddPlace} />
-        <Route path="/place/show/:id" component={(props)=> <ShowPlace id={props.match.params.id}/>} /> 
+        <Route path="/addplace" component={AddPlace} />
+        <Route path="/place/:id" component={(props)=> <ShowPlace id={props.match.params.id}/>} /> 
       </div>
     </Router>
   );

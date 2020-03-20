@@ -12,14 +12,14 @@ export default class Navbar extends Component {
             <a href="#" data-target="mobile-demo" className="sidenav-trigger"><i className="material-icons">menu</i></a>
             <ul className="right hide-on-med-and-down">
               <li><a href="/">Visited</a></li>
-              <li><a href="/place/addplace">Add Place</a></li>
+              <li><a href="/addplace">Add Place</a></li>
             </ul>
           </div>
         </nav>
 
         <ul className="sidenav" id="mobile-demo">
           <li><a href="/">Visited</a></li>
-          <li><a href="/place/addplace">Add Place</a></li>
+          <li><a href="/addplace">Add Place</a></li>
         </ul>
       </div>
     );

@@ -77,7 +77,7 @@ router.route('/add').post(upload.single('imageData'),(req,res,next)=>{
     var newPlace=new Places({
         place:place,
         description:desc, 
-        imageData:'./'+req.file.path,
+        imageData:'/'+req.file.path,
         imageName:req.file.path.slice(8,req.file.path.length),
         location:req.body.location,
         iframeLocation:req.body.iframeLocation
