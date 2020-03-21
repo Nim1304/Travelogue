@@ -5,7 +5,7 @@
      
      git clone https://github.com/Nim1304/Travelogue.git
 
-     unzip the file
+     unzip the file..if downloaded directly without git clone
 
      cd travelogue
 
