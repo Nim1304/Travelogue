@@ -59,7 +59,7 @@ export default class AddPlace extends Component {
         place.append("description", this.state.description);
         place.append("imageData", this.state.image);
         place.append("location", `https://www.google.com/maps/@${this.state.latitude},${this.state.longitude},15z`)
-        place.append("iframeLocation", `https://www.google.com/maps/embed/v1/view?key=AIzaSyC5PRxaOsk8dnnKrBvUXhUX1tvpiHHiJcM&center=${this.state.latitude},${this.state.longitude}&zoom=15`);
+        place.append("iframeLocation", `https://www.google.com/maps/embed/v1/view?key=<API_KEY>&center=${this.state.latitude},${this.state.longitude}&zoom=15`);
 
         console.log(place);
 
